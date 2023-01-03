@@ -107,12 +107,6 @@ DATABASES = {
         #     'username':'',
         #     'password':''
         # }
-        'CLIENT':{
-            'host':'mongodb+srv://squizler:etok1789.@cluster0.0nojd.azure.mongodb.net/test',
-            # 'port':27017,
-            'username':'squizler',
-            'password':'etok1789.'
-        }
     }
 }
 
