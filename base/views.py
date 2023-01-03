@@ -22,7 +22,7 @@ def index_page(request):
 @api_view(["POST"])
 def predict_malware(request):
     try:
-        machine = request.data.get('Machine',None)
+        # machine = request.data.get('Machine',None)
         ds = request.data.get('DebugSize',None)
         dr = request.data.get('DebugRVA',None)
         miv = request.data.get('MajorImageVersion',None)
@@ -38,11 +38,11 @@ def predict_malware(request):
         rs = request.data.get('ResourceSize',None)
         btca = request.data.get('BitcoinAddresses',None)
 
-        fields = [machine, ds, dr, miv, mov, er, es, iv, malv, milv, nos, sosr, dllc, rs, btca]
+        fields = [ds, dr, miv, mov, er, es, iv, malv, milv, nos, sosr, dllc, rs, btca]
         # print(fields)
         if not None in fields:
             #Datapreprocessing Convert the values to int
-            machine = int(machine)
+            # machine = int(machine)
             ds = int(ds)
             dr = int(dr)
             miv = int(miv)
@@ -58,12 +58,12 @@ def predict_malware(request):
             rs = int(rs)
             btca = int(btca)
 
-            result = [[machine, ds, dr, miv, mov, er, es, iv, malv, milv, nos, sosr, dllc, rs, btca]]
+            result = [[ds, dr, miv, mov, er, es, iv, malv, milv, nos, sosr, dllc, rs, btca]]
             result = np.array(result).reshape((1,-1))
 
             #Passing data to model & loading the model from disks
             print('got to the classifier')
-            classifier = joblib.load('base/xgboost_model.pkl') 
+            classifier = joblib.load('base/xgb_model.pkl') 
             
             print('got here...')
             prediction = classifier.predict(result)
