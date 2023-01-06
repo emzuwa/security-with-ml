@@ -21,57 +21,85 @@
     <title>Security</title>
     <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
 </head>
-<body style="background-color:""> 
-    <div class="text-center">
+<body style="background-color:"#332D2D" class="bg-dark"> 
+    <div class=" text-center">
         <h3 style="color: white;" class="p-3 bg-primary">Security <span style="color: red;">Threats</span> </h3>
     </div>
-    <div class="container">
+    
 
-        <section id="counter" class="section-padding">
-            <div class="overlay"></div>
-            <div class="container">
-              <div class="row justify-content-between">
-                <div class="col-lg-12 col-md-12 col-xs-12">
-                  <div class="mt-4 text-center row">
-                    <!-- Start counter -->
-                    <div class="bg-success mb-3 m-2 rounded-lg p-3 col-lg-3 col-md-6 col-xs-12">
-                        <div class="counter-box wow fadeInUp" data-wow-delay="0.2s">
-                          <div class="icon-o"><i class="lni-users"></i></div>
-                          <div class="fact-count">
-                            <h2><span class="counter"> <b>{{threats}}</b> </span></h2>
-                            <h3>Threats</h3>
-                          </div>
-                        </div>
-                      </div>
-                    <div class="bg-danger mb-3 m-2 rounded-lg p-3 col-lg-3 col-md-6 col-xs-12">
-                      <div class="counter-box wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="icon-o"><i class="lni-users"></i></div>
-                        <div class="fact-count">
-                          <h2><span class="counter"> <b>500</b> </span></h2>
-                          <h3>Resolved</h3>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- End counter -->
-                    <!-- Start counter -->
-                    <div class="bg-success mb-3 m-2 rounded-lg p-3 col-lg-3 col-md-6 col-xs-12">
-                        <div class="counter-box wow fadeInUp" data-wow-delay="0.2s">
-                          <div class="icon-o"><i class="lni-users"></i></div>
-                          <div class="fact-count">
-                            <h2><span class="counter"> <b>500</b> </span></h2>
-                            <h3>Unresolved</h3>
-                          </div>
-                        </div>
-                      </div>
-                    <!-- End counter -->
-                    <!-- Start counter -->
-                    </div>
-                </div>
-              </div>
+        <div class="container">
+          <!-- Content here -->
+          <div class="d-flex flex-row mb-3">
+            <div class="p-2 m-2 bg-primary col-lg-3 rounded-lg shadow-lg">
+              <h3 class="text-light">Threats</h3>
+              <h2><span class="counter text-light"> <b>{{threats}}</b> </span></h2>
             </div>
-          </section>
-          <!-- Counter Section End -->
+            <div class="p-2 m-2 bg-primary col-lg-3 rounded-lg shadow-lg">
+              <h3 class="text-light">Resolved</h3>
+              <h2><span class="counter text-light"> <b>500</b> </span></h2>
+            </div>
+            <div class="p-2 m-2 bg-primary col-lg-3 rounded-lg shadow-lg">
+              <h3 class="text-light">Unresolved</h3>
+              <h2><span class="counter text-light"> <b>500</b> </span></h2>
+            </div>
+            <div class="p-2 m-2 bg-primary col-lg-3 rounded-lg shadow-lg">
+              <h3 class="text-light">Unresolved</h3>
+              <h2><span class="counter text-light"> <b>500</b> </span></h2>
+            </div>
+          </div>
+        </div>
+        
+        
+    <!-- Counter Section End -->
 
+    <!-- Charts Section start -->
+
+    <div class="container pt-5">
+      <div class="row">
+        <div class="col bg-primary m-2 rounded">
+          <div class="p-2">
+            <h4 class="text-small text-light">Logins</h4>
+            <h4 class="text -small text-light">54</h4>
+            <canvas id="firstChart" width="400" height="400"></canvas>
+          </div>
+        </div>
+        <div class="col bg-primary m-2 rounded">
+          <div class="p-2">
+            <h4 class="text-small text-light">Views</h4>
+            <h4 class="text -small text-light">54</h4>
+            <canvas id="secondChart" width="400" height="400"></canvas>
+          </div>
+        </div>
+        <div class="col bg-primary m-2 rounded">
+         <h4 class="pt-2 pb-2 mt-2 text-light">Features Checklist</h4>
+         <div>
+            <h6 class="font-weight-bold text-light">Exclusive Content</h6>
+            <p class="font-weight-light text-secondary">This is the first content</p>
+         </div>
+            <hr>
+          <div>
+            <h6 class="font-weight-bold text-light">Exclusive Content</h6>
+            <p class="font-weight-light text-secondary">This is the second content</p>
+          </div>
+           <hr>
+           <div>
+            <h6 class="font-weight-bold text-light">Rule Master</h6>
+            <p class="font-weight-light text-secondary">This is the third content</p>
+          </div>
+           <hr>
+           <div>
+            <h6 class="font-weight-bold text-light">Api Access</h6>
+            <p class="font-weight-light text-secondary">This is the forth content</p>
+          </div>
+           <hr>
+        </div>
+      </div>
+    <!-- Charts Section end -->
+
+
+    <!-- Table Section start -->
+
+    <div class="container pt-5">
           <table class="table">
             <thead>
               <tr>
@@ -94,68 +122,8 @@
           </table>
     </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <canvas id="firstChart" width="400" height="400"></canvas>
-          </div>
-          <div class="col">
-            <canvas id="secondChart" width="400" height="400"></canvas>
-          </div>
-          <div class="col">
-           <h4>Features Checklist</h4>
-           <div>
-              <h6 class="font-weight-bold">Exclusive Content</h6>
-              <p class="font-weight-light">This is the first content</p>
-           </div>
-              <hr>
-            <div>
-              <h6 class="font-weight-bold">Exclusive Content</h6>
-              <p class="font-weight-light">This is the second content</p>
-            </div>
-             <hr>
-             <div>
-              <h6 class="font-weight-bold">Rule Master</h6>
-              <p class="font-weight-light">This is the third content</p>
-            </div>
-             <hr>
-             <div>
-              <h6 class="font-weight-bold">Api Access</h6>
-              <p class="font-weight-light">This is the forth content</p>
-            </div>
-             <hr>
-          </div>
-        </div>
-        <!-- <div class="row">
-          <div class="col">
-            1 of 3
-          </div>
-          <div class="col-5">
-            2 of 3 (wider) 
-          </div>
-          <div class="col">
-            3 of 3
-          </div>
-        </div> -->
-      <!-- </div> -->
+    <!-- Table Section ends -->
 
-
-      <div class="row">
-        <div class="col-3">
-          <!-- column content will go here -->dgbngfngfhg
-        </div>
-        <div class="col-3">
-          <!-- column content will go here -->fxgnhfnfnfh
-        </div>
-        <div class="col-3">
-          <!-- column content will go here -->fgnfgnhngfngf
-        </div>
-        <div class="col-3">
-          <!-- column content will go here -->gdbgdhgdhgd
-        </div>
-      </div>
-      
-      
 
 
 
